@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Поздравление</title>
+        <link href="https://fonts.cdnfonts.com/css/intro" rel="stylesheet">
+        <link rel="stylesheet" href="assets/styles/reset.css">
+        <link rel="stylesheet" href="assets/styles/main.css">
+    </head>
+    <body id="newborn" class="loading">
+        <section class="top">
+            <div class="top__content">
+                <h1 class="top__title">Поздравляем!</h1>
+                <div class="top__subtitle">Денис и Валя, от всей команды поздравляем Вас с началом новой главы в вашей истории!</div>
+                <div class="top__subtitle">Желаем, чтобы Ваш сын <span id="dynamic-text"></span><div class='console-underscore' id='console'>&#95;</div></div>
+                <button id="target-button" class="top__button" data-target="#congrats">Перейти к поздравлениям</button>
+            </div>
+            <div class="parallax-wrap">
+                <span value="-15"><img src="assets/images/cloud_1.png" alt="Облако"/></span>
+                <span value="5"><img src="assets/images/cloud_2.png" alt="Облако"/></span>
+              </div>
+        </section>
+        <section class="grid loading" id="congrats">
+            <div class="loader"></div>
+        </section>
+        <script type="text/javascript" src="scripts/index.js"></script>
+    </body>
+</html>

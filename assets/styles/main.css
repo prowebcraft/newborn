@@ -1,0 +1,189 @@
+@font-face {
+  font-family: "PacificoRegular";
+  src: url("../fonts/PacificoRegular/PacificoRegular.eot");
+  src: url("../fonts/PacificoRegular/PacificoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/PacificoRegular/PacificoRegular.woff") format("woff"), url("../fonts/PacificoRegular/PacificoRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+.html {
+  scroll-behavior: smooth;
+}
+
+#newborn img {
+  width: 100%;
+  height: auto;
+}
+#newborn.loading {
+  opacity: 0;
+}
+#newborn .top {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../images/bg_2.png), url(../images/bg_1.png);
+  background-size: 36%, 36%;
+  background-position: bottom left, top right;
+  background-repeat: no-repeat;
+}
+#newborn .top__content {
+  position: relative;
+  padding: 15% 15px 0;
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100%;
+}
+#newborn .top h1 {
+  font-family: "PacificoRegular", Arial, Helvetica, sans-serif;
+  color: #678480;
+  font-size: 102px;
+  line-height: 179px;
+  margin-bottom: 40px;
+}
+#newborn .top__subtitle {
+  font-family: "intro", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 140%;
+  color: #678480;
+}
+#newborn .top .console-underscore {
+  display: inline-block;
+  position: relative;
+  top: -0.14em;
+}
+#newborn .top .console-underscore.hidden {
+  opacity: 0;
+}
+#newborn .top__button {
+  display: block;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 60px;
+  font-family: "intro", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #678480;
+  color: #fff;
+  transition: background-color 0.4s;
+  border-radius: 10px;
+  border: none;
+}
+#newborn .top__button:hover {
+  cursor: pointer;
+  background-color: #EC9C7B;
+}
+#newborn .parallax-wrap span {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+#newborn .parallax-wrap span:nth-child(1) {
+  top: 10%;
+  left: 35px;
+  width: 19%;
+  z-index: 3;
+}
+#newborn .parallax-wrap span:nth-child(2) {
+  bottom: 5%;
+  right: 14%;
+  width: 19%;
+  z-index: 19%;
+}
+#newborn .grid {
+  min-height: 100vh;
+  padding: 30px;
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+  -webkit-column-width: auto;
+  -moz-column-width: auto;
+  column-width: auto;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  position: relative;
+}
+#newborn .grid.loading .loader {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#newborn .grid.loading .loader::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url(../images/toy.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+#newborn .grid-block {
+  break-inside: avoid;
+  border: 5px solid #678480;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+#newborn .grid-block[data-color=pink] {
+  border-color: #EC9C7B;
+}
+#newborn .grid-block[data-color=pink] .grid-block___from {
+  border-color: #EC9C7B;
+}
+#newborn .grid-block[data-color=green] {
+  border-color: #678480;
+}
+#newborn .grid-block[data-color=green] .grid-block___from {
+  border-color: #678480;
+}
+#newborn .grid-block[data-color=green] {
+  border-color: #ABC1A6;
+}
+#newborn .grid-block[data-color=green] .grid-block___from {
+  border-color: #ABC1A6;
+}
+#newborn .grid-block__text {
+  font-family: "intro", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 110%;
+  color: #678480;
+  margin-top: 10px;
+}
+#newborn .grid-block___from {
+  font-family: "intro", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 140%;
+  color: #678480;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #678480;
+}
+#newborn .grid-block___from b {
+  font-weight: 700;
+}
+
+@keyframes spin {
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
