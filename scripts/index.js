@@ -67,6 +67,8 @@ function consoleText(words, id, colors) {
 
 // parallax effect
 function parallax(event) {
+  if (window.innerWidth < 1024) return;
+
     this.querySelectorAll(".parallax-wrap span").forEach((shift) => {
         const position = shift.getAttribute("value");
         const x = (window.innerWidth - event.pageX * position) / 90;
@@ -98,6 +100,8 @@ function createCongrats() {
                 congratsBlock.appendChild(createCongratsBlock(item));
             })
 
+            initVideosEvents();
+
             congratsBlock.classList.remove('loading');
           }
         })
@@ -120,6 +124,20 @@ function createCongratsBlock(data) {
 
         block.appendChild(imgBlock);
     }
+
+    // if (data.video_url) {
+    //   const videoBlock = createElement('div', 'block__video');
+    //   const videoElem = createElement('video', 'block__video-el');
+    //   const videoSource = createElement('source');
+    //   const videoButton = createElement('button', 'block__video-button')
+
+    //   videoSource.src = data.video_url;
+    //   videoSource.type = 'video/mp4';
+
+    //   videoSource.append(videoElem);
+    //   videoElem.append(videoBlock);
+    //   videoButton.append(videoBlock);
+    // }
 
     if (data.text) {
         const textBlock = createElement('div', 'grid-block__text');
@@ -149,4 +167,44 @@ function createElement(type, elementClass) {
 
 function getRandomNumber(length) {
     return Math.floor(Math.random()*length);
+}
+
+function initVideosEvents() {
+  const videos = Array.prototype.slice.call(document.querySelectorAll('video'));
+
+  if (!videos.length) return;
+
+  videos.forEach((video) => {
+    let playBtn = video.closest('.greeting__video').querySelector('.block__video-button');
+    playBtn.addEventListener('click', function() {
+        if(video.paused) {
+            pauseAllVideos();
+
+            playBtn.classList.add('block__video-button_hidden');
+            video.classList.add('video_active');
+            video.play();
+        }
+    })
+
+    video.addEventListener('click', function() {
+        if (!video.paused) {
+            pauseAllVideos();
+        }
+    })
+
+})
+};
+
+function pauseAllVideos() {
+  let activeVideos = Array.prototype.slice.call(document.querySelectorAll('.video_active'));
+
+  if(activeVideos.length) {
+      activeVideos.forEach((video) => {
+          let playBtn = video.closest('.block__video').querySelector('.block__video-button');
+
+          playBtn.classList.remove('block__video-button_hidden');
+          video.classList.remove('video_active');
+          video.pause();
+      })
+  }
 }
